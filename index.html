@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0109)https://pro.shanghaicme.com/cme/static/page/verification.html?idCard=142327199006166643&projectExecuteId=3871 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link href="./verification_files/screen.css" type="text/css" rel="stylesheet">
+    <link href="./verification_files/site.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        body,html{padding:0;margin:0;}
+        button {border-style:none;background-color:transparent;cursor:pointer;text-decoration:underline;}
+        table td {word-break:break-all;}
+        .projectHead {color:#FF9900;font-size:14px;height:26px;line-height:26px;background-image:url("/national_project/image/index_r5_c4-2.jpg");background-repeat:repeat-x;}
+        .student-info{overflow:hidden;width:100%!important;}
+        .student-info h1{text-align:center;font:24px/40px Helvetica, Verdana, sans-serif!important;margin:0;color:#fff;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            /*GRADIENT*/
+            background: #00b7ea; /* Old browsers */
+            background: -moz-linear-gradient(top, #00b7ea 0%, #009ec3 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00b7ea), color-stop(100%,#009ec3)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* IE10+ */
+            background: linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* W3C */
+        }
+        .student-info p{overflow:hidden;padding:0!important;line-height:3;border:1px solid #ccc;border-radius:10px;-moz-border-radius:5px;-webkit-border-radius:5px;margin:5px auto;width:98%;}
+        .student-info p span:nth-of-type(1){font-size:1.2em;float:left;background-color:#09f;display:inline-block;color:#fff;line-height:1.3;padding:8px 8px 10px 0;width:18%;border-radius:3px 0 0 3px;-moz-border-radius:3px 0 0 3px;-webkit-border-radius:3px 0 0 3px;text-align:right;}
+        .student-info p span:nth-of-type(2){font-size:1.2em;display:inline-block;padding:0 5px 0 10px!important;line-height:1.3!important;float:left;padding:8px!important;width:73%;}
+        .h3{font-size:.6em!important;text-align:center!important;}
+        .projectName{height: 30px}
+    </style>
+<script type="text/javascript" src="./verification_files/prototype.js.下载"></script><script type="text/javascript" src="./verification_files/jquery.js.下载"></script><script src="https://cdn.jsdelivr.net/npm/eruda"></script></head>
+
+
+
+
+
+
+<body><div class="student-info">
+    <h1>上海市继续医学教育项目</h1>
+    <center><h3>学分证书信息</h3></center>
+    <p><span>学员<br>姓名</span><span id="name">许春芳</span></p>
+    <p><span>学员<br>性别</span><span id="sex">女</span></p>
+    <p><span id="projectNameNumber">项目<br>编号</span><span id="numberValue">2023-15-01-006(沪)</span></p>
+    <p><span>项目<br>名称</span><span id="nameValue">研究者发起的临床研究实施能力培训班</span></p>
+    <p><span>项目举<br>办时间</span><span id="startAndEndDate">2023-08-11--2023-08-13</span></p>
+    <p><span>项目申<br>办单位</span><span id="unit">海军军医大学第一附属医院</span></p>
+    <p><span>项目<br>类型</span><span id="projectType">普通项目</span></p>
+    <p><span>所获<br>学分</span><span id="credit">6</span></p>
+    <p><span>证书<br>编号</span><span id="certificateNumber">SH 0014732</span></p>
+
+</div>
+<div style="padding:10px 5px 20px;">
+    <!-- <p class="h3"> 版权所有(&copy;): 中华预防医学会 010-64013358</p> -->
+    <p class="h3"> 技术支持:上海卫生远程医学网络有限公司</p>
+</div>
+
+<script>
+
+    function getUrlSearch(name) {
+        // 未传参，返回空
+        if (!name) return null;
+        // 查询参数：先通过search取值，如果取不到就通过hash来取
+        var after = window.location.search;
+        after = after.substr(1) || window.location.hash.split('?')[1];
+        // 地址栏URL没有查询参数，返回空
+        if (!after) return null;
+        // 如果查询参数中没有"name"，返回空
+        if (after.indexOf(name) === -1) return null;
+
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+        // 当地址栏参数存在中文时，需要解码，不然会乱码
+        var r = decodeURI(after).match(reg);
+        // 如果url中"name"没有值，返回空
+        if (!r) return null;
+
+        return r[2];
+    }
+
+    window.onload = function() {
+        var height = window.getComputedStyle(document.getElementById("nameValue")).height;
+        document.getElementById("projectName").style.height= height;
+    };
+
+    (function verificationData() {
+
+        /*     var projectName = decodeURI(JUIUtil.getParam('projectName'));
+             alert(projectName)*/
+        $.ajax({
+            type : "POST",
+            url : "../../ProjectExecute/certificateVerificationData",
+              async:false,
+            data : {
+                // projectName:getUrlSearch("projectName"),
+                projectExecuteId:getUrlSearch("projectExecuteId"),
+                idCard:getUrlSearch("idCard")
+            },
+            success : function(rs) {
+                document.getElementById("name").innerText = rs.data.name
+                document.getElementById("numberValue").innerHTML = rs.data.projectNumber
+                document.getElementById("nameValue").innerHTML = rs.data.projectName
+                document.getElementById("sex").innerText = rs.data.sexStr
+                document.getElementById("startAndEndDate").innerHTML = rs.data.startAndEndDate
+                document.getElementById("unit").innerHTML = rs.data.reportingUnit
+                document.getElementById("projectType").innerText = rs.data.projectTypeStr
+                document.getElementById("credit").innerHTML = rs.data.credit
+                // document.getElementById("certificateNumber").innerHTML = rs.data.certificateNumber;
+                if (rs.data.projectLevel != 'country') {
+                    if(rs.data.projectTypeStr == '远程项目'){
+                        if(rs.data.projectLevel == 'province'){
+                            document.getElementById('certificateNumber').innerHTML = "SH " + rs.data.certificateNumber+"(沪远)";
+                        }else if(rs.data.projectLevel == 'city'){
+                            document.getElementById('certificateNumber').innerHTML = "SH " + rs.data.certificateNumber+"(远II)";
+                        }
+                    }else if((rs.data.projectTypeStr == '普通项目')){
+                        if(rs.data.projectLevel =='province'){
+                            document.getElementById('certificateNumber').innerHTML = "SH " + rs.data.certificateNumber;
+                        }else if(rs.data.projectLevel =='city'){
+                            document.getElementById('certificateNumber').innerHTML = "SH " + rs.data.certificateNumber+(II);
+                        }
+                    }
+                }else {
+                    document.getElementById('certificateNumber').innerHTML = rs.data.certificateNumber
+                }
+            },
+        });
+    })()
+
+
+</script>
+</body></html>
